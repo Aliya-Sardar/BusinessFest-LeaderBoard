@@ -1,0 +1,24 @@
+/* CSS for login in page*/
+.signin-container
+{
+    width: 380px;
+    height: 350px;
+    background-color: white;
+    box-shadow: 10px 10px 10px #aaaaaa;
+    border: 1px solid #D9D9D9;
+}
+
+.form-container
+{
+    margin: 20px ;
+}
+
+.footer-bg
+{
+    margin-top: 20px;
+    padding-top:10px ;
+    padding-bottom: 20px;
+    background-color: black;
+    color: white;
+    clear: both;        /* Makes the footer stay below the floated items */
+}

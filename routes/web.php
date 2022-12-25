@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PageController::class ,'index'])-> name('index') ;
+
+// route to login authentication
+Route::post('/Authenticate', [PageController::class ,'loginAuth'])-> name('loginAuth');
+
+// route to evaluation form
+Route::get('/EvaluationForm', [PageController::class ,'eform'])-> name('eform');
