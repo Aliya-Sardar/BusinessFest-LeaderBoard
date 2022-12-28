@@ -35,7 +35,9 @@
     <!-- Footer Section -->
     <footer class="fixed-bottom" align='center'>
         <div class="container-fluid footer-bg">
-            <small>Copyright &copy; 2022-23 - Business Fest. All Rights Reserved.
+            <small>Copyright &copy; 2022-23 - Business Fest.
+                <br>
+                All Rights Reserved.
                 <br>
                 Developed by IT Team.
             </small>

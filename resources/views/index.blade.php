@@ -3,7 +3,7 @@
 
 @section('main_content')
     <!-- Sign in Form -->
-    <div class="signin-container rounded mx-auto my-5 py-5">
+    <div class="signin-container rounded mx-auto my-5 pt-5">
         <h1 align='center'>Log in</h1>
         <div class="form-container mt-5">
             <form action="{{ route('loginAuth') }}" method="POST">
@@ -21,9 +21,9 @@
                 <!-- Sign in Button -->
                 <br/>
                 <div class="d-flex">
-                    <button type="submit" class="btn btn-primary ml-auto">Login</button>
+                    <button type="submit" class="btn btn-primary ">Login</button>
                 </div>
             </form>
         </div>
-    </div>
+    
 @endsection

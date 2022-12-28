@@ -20,5 +20,16 @@ Route::get('/', [PageController::class ,'index'])-> name('index') ;
 // route to login authentication
 Route::post('/Authenticate', [PageController::class ,'loginAuth'])-> name('loginAuth');
 
+
+///////////////////////// Evaluation Form /////////////////////////////////
 // route to evaluation form
-Route::get('/EvaluationForm', [PageController::class ,'eform'])-> name('eform');
+Route::get('/EvaluationForm/{bName}', [PageController::class ,'eform'])-> name('eform')->middleware('auth');
+// route to submit Evaluation Form
+Route::put('/EvaluationSubmission', [PageController::class ,'evaluationUpdate'])-> name('evaluationUpdate');
+
+
+///////////////////////// Sales Form /////////////////////////////////
+// route to sales form
+Route::get('/SalesForm/{bName}', [PageController::class ,'salesForm'])-> name('salesForm')->middleware('auth');
+// route to submit sales Form
+Route::put('/SalesSubmission', [PageController::class ,'salesUpdate'])-> name('salesUpdate');
