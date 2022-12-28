@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Fest 23</title>
 
-    <link rel="icon" type="image/BFest_icon" sizes="32x32" href="images/BFesticon.png">
+    <link rel="icon" type="image/icon" sizes="32x32" href="/images/BFesticon.png">
 
     <!-- Bootstrap CSS -->
     <!-- Scripts -->
@@ -20,10 +20,10 @@
     <!-- Header Section -->
     <header>
         <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{route('index')}}">
                 <img src="/images/BFest.png" width="50" height="50" class="d-inline-block align-top" alt="">
                 <h3 class="d-inline-block mt-3">Business Fest 23</h3>
-            </a>
+            </a>    
         </nav>
     </header>
 

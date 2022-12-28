@@ -14,6 +14,11 @@ class PageController extends Controller
         return view('index');
     }
 
+    public function login()
+    {
+        return view('login');
+    }
+
     // authenticate the user
     protected function loginAuth(Request $request)
     {
@@ -26,12 +31,17 @@ class PageController extends Controller
         $credentials = $request->only('email', 'password');
          
         if (Auth::attempt($credentials)) {
-            //return redirect()->route('eform');
-            return view('death');
+            return redirect()->route('index');
         }
   
         // if the given data is not correct go to login page
-        return redirect()->route('index');
+        return redirect()->route('login');
+    }
+
+    ////////////////////////////////// Business page redirect 
+    protected function business($bName)
+    {
+        return view('business', compact('bName'));
     }
 
     //////////////////////////////// Evaluation Form ////////////////////////////////////
@@ -44,7 +54,8 @@ class PageController extends Controller
     // save the submission into the database
     protected function evaluationUpdate(Request $request)
     {
-        $data =  Evaluation::where('business_Name',$request -> input('bName'))
+        $bName = $request -> input('bName');
+        $data =  Evaluation::where('business_Name',$bName)
                 ->update([
                     'HRM' => $request -> input('HRM'),
                     'Innovation' => $request -> input('Inn'),
@@ -57,7 +68,7 @@ class PageController extends Controller
                     'Promotions' => $request -> input('PA')
                 ]);
 
-        return view('successful');
+        return redirect()->route('business', [$bName]);
     }
 
 
@@ -67,4 +78,18 @@ class PageController extends Controller
     {
         return view('salesForm', compact('bName'));
     }
+
+    // update the sales data in the databse
+    protected function salesUpdate(Request $request)
+    {
+        $bName = $request -> input('bName');
+        $data =  Evaluation::where('business_Name',$bName)
+                ->update([
+                    'Sales' => $request -> input('Sales'),
+                    'Sales_Money' => $request -> input('money')
+                ]);
+
+        return redirect()->route('business', [$bName]);
+    }
+
 }

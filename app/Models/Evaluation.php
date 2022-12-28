@@ -10,5 +10,4 @@ class Evaluation extends Model
     use HasFactory;
 
     public $timestamps = true;
-    public $dateFormat = 'h:m:s';
 }

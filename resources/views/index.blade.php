@@ -2,28 +2,21 @@
 @extends('template.app')
 
 @section('main_content')
-    <!-- Sign in Form -->
-    <div class="signin-container rounded mx-auto my-5 pt-5">
-        <h1 align='center'>Log in</h1>
-        <div class="form-container mt-5">
-            <form action="{{ route('loginAuth') }}" method="POST">
-                @csrf                                               <!--csrf token--> 
-                <!-- Email -->
-                <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder="Email" />
-                </div>
-    
-                <!-- Password -->
-                <div class="form-group mt-4">
-                    <input type="password" class="form-control" name="password" placeholder="Password"/>
-                </div>
-    
-                <!-- Sign in Button -->
-                <br/>
-                <div class="d-flex">
-                    <button type="submit" class="btn btn-primary ">Login</button>
-                </div>
-            </form>
-        </div>
+    <!-- The main content of the index page -->
+    <div class="container">
+        <h1 align='center'>Welcome to Business Fest 23</h1>
+        <br><br>
+        <p>Please Login to Evaluate the participants in BFest. After logging in scan the 
+            QR Code of each participant to enter their data. There are 2 forms. One is Evaluation form 
+            and the other is Sales form. The sales data can only be entered through the sales form.
+        </p>
+        <br>
+        @auth
+            <p>You are logged in</p>
+        @else
+        <a href="{{route('login')}}" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Login</a>
+        @endauth
+        
+    </div>
     
 @endsection

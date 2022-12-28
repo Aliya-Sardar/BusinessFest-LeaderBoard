@@ -18,18 +18,22 @@ use App\Http\Controllers\PageController;
 Route::get('/', [PageController::class ,'index'])-> name('index') ;
 
 // route to login authentication
+Route::get('/login', [PageController::class ,'login'])-> name('login') ;
 Route::post('/Authenticate', [PageController::class ,'loginAuth'])-> name('loginAuth');
+
+///////////////////////// Business Forms Redirect page /////////////////////////////////
+Route::get('/Business/{bName}', [PageController::class ,'business'])-> name('business')->middleware('auth');
 
 
 ///////////////////////// Evaluation Form /////////////////////////////////
 // route to evaluation form
-Route::get('/EvaluationForm/{bName}', [PageController::class ,'eform'])-> name('eform')->middleware('auth');
+Route::get('/EvaluationForm/{bName}', [PageController::class ,'eform'])->middleware('auth');
 // route to submit Evaluation Form
 Route::put('/EvaluationSubmission', [PageController::class ,'evaluationUpdate'])-> name('evaluationUpdate');
 
 
 ///////////////////////// Sales Form /////////////////////////////////
 // route to sales form
-Route::get('/SalesForm/{bName}', [PageController::class ,'salesForm'])-> name('salesForm')->middleware('auth');
+Route::get('/SalesForm/{bName}', [PageController::class ,'salesForm'])->middleware('auth');
 // route to submit sales Form
 Route::put('/SalesSubmission', [PageController::class ,'salesUpdate'])-> name('salesUpdate');

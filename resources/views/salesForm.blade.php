@@ -22,7 +22,7 @@
             <p>Money</p>
             <div class="d-flex justify-content-center">
                 <div class="form-check form-check-inline">
-                    <input type="text" class="form-control" id="money" name="money" />
+                    <input type="number" class="form-control" id="money" name="money" />
                 </div>
             </div>
             <br><br>
@@ -61,5 +61,10 @@
                 </div>
             </div>
             <br><br>
+            <!------------------ Submit Button ------------------>
+            <div class="d-flex">
+                <button type="submit" class="btn btn-primary ml-auto">Submit</button>
+            </div>
+        </form>
     </div>
 @endsection
