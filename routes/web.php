@@ -37,3 +37,7 @@ Route::put('/EvaluationSubmission', [PageController::class ,'evaluationUpdate'])
 Route::get('/SalesForm/{bName}', [PageController::class ,'salesForm'])->middleware('auth');
 // route to submit sales Form
 Route::put('/SalesSubmission', [PageController::class ,'salesUpdate'])-> name('salesUpdate');
+
+
+///////////////////////// Leaderboard /////////////////////////////////
+Route::get('/Leaderboard', [PageController::class ,'getStallData'])-> name('leaderboard');

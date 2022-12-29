@@ -92,4 +92,33 @@ class PageController extends Controller
         return redirect()->route('business', [$bName]);
     }
 
+    //////////////////////////////// Get Data from DB for showing in Leaderboard ////////////////////////////////////
+    protected function getStallData(){
+        $stallData = Evaluation::all();
+        $arr = array();
+        foreach ($stallData as $row){
+            $points = ($row['HRM']*0.10) + ($row['Innovaion']*0.15)+
+            ($row['Sustainibility']*0.15) + ($row['Finance']*0.10) +($row['Entrepreneurial_Drive']*0.10) +
+            ($row['Sponsorship']*0.05) + ($row['Social_Media']*0.05) + ($row['Digital_Ads']*0.05) +
+            ($row['Promotions']*0.05) + ($row['Sales']*0.20);  
+            $bname =  $row['business_Name'];
+            $arr[] = ["Bname" => $bname, "Points" => $points];
+        }
+
+        // sort the array based on points in descending order
+        $columns = array_column($arr, 'Points');
+        array_multisort($columns, SORT_DESC, $arr);
+
+        // get the top 10 businesses and their points and send it to the view
+        $top_10 = array();
+        for($i=0;$i<10;$i++)
+        {
+            array_push($top_10, array($arr[$i]["Bname"], $arr[$i]["Points"]));
+        }
+        
+        return view('main_board',['top_10' => $top_10]);
+
+    }
 }
+
+

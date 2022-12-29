@@ -16,7 +16,10 @@
         @else
         <a href="{{route('login')}}" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Login</a>
         @endauth
-        
+        <br><br>
+        <div >
+            <a href="{{ route('leaderboard')}}" class='btn btn-primary'>Leaderboard</a>
+        </div>
     </div>
     
 @endsection
