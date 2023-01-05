@@ -12,7 +12,9 @@
         </p>
         <br>
         @auth
-            <p>You are logged in</p>
+            <h5>Welcome {{ Auth::user()->name }} !!!!!</h5>
+            <br><br><br>
+            <a href="{{ route('logout')}}" class='btn btn-success'>Logout</a>
         @else
         <a href="{{route('login')}}" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Login</a>
         @endauth

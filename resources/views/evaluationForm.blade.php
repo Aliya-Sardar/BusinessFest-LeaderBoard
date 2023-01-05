@@ -95,7 +95,7 @@
                 </div>
                 <br><br>
 
-                <!------------------ Sustainibility 10% ------------------>
+                <!------------------ Sustainibility 15% ------------------>
                 <h4>Sustainibility:</h4>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
@@ -117,13 +117,13 @@
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Sus4" name="Sus" value="4" />
+                        <input type="radio" class="form-check-input" id="Sus4" name="Sus" value="2" />
                         <label class="form-check-label" for="Sus4">
                             4
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Sus5" name="Sus" value="5" />
+                        <input type="radio" class="form-check-input" id="Sus5" name="Sus" value="3" />
                         <label class="form-check-label" for="Sus5">
                             5
                         </label>
@@ -131,72 +131,109 @@
                 </div>
                 <br><br>
 
-                <!------------------ Finance 10% ------------------>
-                <h4>Finance:</h4>
+                <!------------------ Clean 5% ------------------>
+                <h4>Cleanliness and Hygiene:</h4>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Fin1" name="Fin" value="1" />
-                        <label class="form-check-label" for="Fin1">
+                        <input type="radio" class="form-check-input" id="Clean1" name="Clean" value="1" />
+                        <label class="form-check-label" for="Clean1">
                             1
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Fin2" name="Fin" value="2" />
-                        <label class="form-check-label" for="Fin2">
+                        <input type="radio" class="form-check-input" id="Clean2" name="Clean" value="2" />
+                        <label class="form-check-label" for="Clean2">
                             2
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Fin3" name="Fin" value="3" />
-                        <label class="form-check-label" for="Fin3">
+                        <input type="radio" class="form-check-input" id="Clean3" name="Clean" value="3" />
+                        <label class="form-check-label" for="Clean3">
                             3
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Fin4" name="Fin" value="4" />
-                        <label class="form-check-label" for="Fin4">
+                        <input type="radio" class="form-check-input" id="Clean4" name="Clean" value="4" />
+                        <label class="form-check-label" for="Clean4">
                             4
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Fin5" name="Fin" value="5" />
-                        <label class="form-check-label" for="Fin5">
+                        <input type="radio" class="form-check-input" id="Clean5" name="Clean" value="5" />
+                        <label class="form-check-label" for="Clean5">
                             5
                         </label>
                     </div>
                 </div>
                 <br><br>
 
-                <!------------------ Entrpreneurial Drive 15% ------------------>
-                <h4>Entrpreneurial Drive:</h4>
+                <!------------------ Proper Documentation 5% ------------------>
+                <h4>Proper Documentation:</h4>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Ent1" name="Ent" value="1" />
-                        <label class="form-check-label" for="Ent1">
+                        <input type="radio" class="form-check-input" id="Doc1" name="Doc" value="1" />
+                        <label class="form-check-label" for="Doc1">
                             1
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Ent2" name="Ent" value="2" />
-                        <label class="form-check-label" for="Ent2">
+                        <input type="radio" class="form-check-input" id="Doc2" name="Doc" value="2" />
+                        <label class="form-check-label" for="Doc2">
                             2
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Ent3" name="Ent" value="3" />
-                        <label class="form-check-label" for="Ent3">
+                        <input type="radio" class="form-check-input" id="Doc3" name="Doc" value="3" />
+                        <label class="form-check-label" for="Doc3">
                             3
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Ent4" name="Ent" value="4" />
-                        <label class="form-check-label" for="Ent4">
+                        <input type="radio" class="form-check-input" id="Doc4" name="Doc" value="4" />
+                        <label class="form-check-label" for="Doc4">
                             4
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Ent5" name="Ent" value="5" />
-                        <label class="form-check-label" for="Ent5">
+                        <input type="radio" class="form-check-input" id="Doc5" name="Doc" value="5" />
+                        <label class="form-check-label" for="Doc5">
+                            5
+                        </label>
+                    </div>
+                </div>
+                <br><br>
+
+
+                <!------------------ Stall Decor 5% ------------------>
+                <h4>Stall Decor:</h4>
+                <div class="d-flex justify-content-center">
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="Decor1" name="Decor" value="1" />
+                        <label class="form-check-label" for="Decor1">
+                            1
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="Decor2" name="Decor" value="2" />
+                        <label class="form-check-label" for="Decor2">
+                            2
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="Decor3" name="Decor" value="3" />
+                        <label class="form-check-label" for="Decor3">
+                            3
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="Decor4" name="Decor" value="4" />
+                        <label class="form-check-label" for="Decor4">
+                            4
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="Decor5" name="Decor" value="5" />
+                        <label class="form-check-label" for="Decor5">
                             5
                         </label>
                     </div>

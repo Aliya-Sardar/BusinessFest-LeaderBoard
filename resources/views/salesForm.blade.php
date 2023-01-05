@@ -27,7 +27,7 @@
             </div>
             <br><br>
 
-            <p>Points</p>
+            <!-- <p>Points</p>
             <div class="d-flex justify-content-center">
                 <div class="form-check form-check-inline">
                     <input type="radio" class="form-check-input" id="Sales1" name="Sales" value="1" />
@@ -60,7 +60,7 @@
                     </label>
                 </div>
             </div>
-            <br><br>
+            <br><br> -->
             <!------------------ Submit Button ------------------>
             <div class="d-flex">
                 <button type="submit" class="btn btn-primary ml-auto">Submit</button>

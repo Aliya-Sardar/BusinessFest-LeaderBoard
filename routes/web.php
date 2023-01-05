@@ -21,6 +21,9 @@ Route::get('/', [PageController::class ,'index'])-> name('index') ;
 Route::get('/login', [PageController::class ,'login'])-> name('login') ;
 Route::post('/Authenticate', [PageController::class ,'loginAuth'])-> name('loginAuth');
 
+// route to get user to logout
+Route::get('/logout', [PageController::class ,'logout'])-> name('logout') ;
+
 ///////////////////////// Business Forms Redirect page /////////////////////////////////
 Route::get('/Business/{bName}', [PageController::class ,'business'])-> name('business')->middleware('auth');
 

@@ -23,7 +23,7 @@
             <a class="navbar-brand" href="{{route('index')}}">
                 <img src="/images/BFest.png" width="50" height="50" class="d-inline-block align-top" alt="">
                 <h3 class="d-inline-block mt-3">Business Fest 23</h3>
-            </a>    
+            </a>
         </nav>
     </header>
 
