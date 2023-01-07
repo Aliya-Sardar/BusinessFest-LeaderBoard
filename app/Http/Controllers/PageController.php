@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Models\Evaluation1;
 use App\Models\Evaluation2;
 use App\Models\Evaluation3;
@@ -149,80 +150,138 @@ class PageController extends Controller
                     'Sales_Money' => $request -> input('money')
                 ]);
         }
-
-        // If user is BFest Team 2 then save the data into Evaluation 2 Table
-        if ($user->name == "BFest Team 2"){
-            $data =  Evaluation2::where('business_Name',$bName)
-                ->update([
-                    'Sales_Money' => $request -> input('money')
-                ]);
-        }
-
-        // If user is BFest Team 3 then save the data into Evaluation 3 Table
-        if ($user->name == "BFest Team 3"){
-            $data =  Evaluation3::where('business_Name',$bName)
-                ->update([
-                    'Sales_Money' => $request -> input('money')
-                ]);
-        }
-
         return redirect()->route('business', [$bName]);
     }
 
 
-
-
-
     //////////////////////////////// Get Data from DB for showing in Leaderboard ////////////////////////////////////
     protected function getStallData(){
-        $stallData = bfest::table('EvalTeam1')
-            ->join('EvalTeam2', 'EvalTeam1.business_Name', '=', 'EvalTeam2.business_Name')
-            ->join('EvalTeam3', 'EvalTeam1.business_Name', '=', 'EvalTeam3.business_Name')
-            ->select('EvalTeam1.*', 'EvalTeam2.*', 'EvalTeam3.*')
+        $stallData = DB::table('evaluation1s')
+
+            ->join('evaluation2s', 'evaluation1s.business_Name', '=', 'evaluation2s.business_Name')
+            ->join('evaluation3s', 'evaluation1s.business_Name', '=', 'evaluation3s.business_Name')
+
+            ->select('evaluation1s.*',
+            'evaluation2s.HRM as HRM2', 'evaluation2s.Innovation as Innovation2', 'evaluation2s.Sustainibility as Sustainibility2', 'evaluation2s.Clean as Clean2',
+            'evaluation2s.Doc as Doc2', 'evaluation2s.Decor as Decor2', 'evaluation2s.Sponsorship as Sponsorship2', 'evaluation2s.Social_Media as Social_Media2',
+            'evaluation2s.Digital_Ads as Digital_Ads2', 'evaluation2s.Promotions as Promotions2',
+
+            'evaluation3s.HRM as HRM3', 'evaluation3s.Innovation as Innovation3', 'evaluation3s.Sustainibility as Sustainibility3', 'evaluation3s.Clean as Clean3',
+            'evaluation3s.Doc as Doc3', 'evaluation3s.Decor as Decor3', 'evaluation3s.Sponsorship as Sponsorship3', 'evaluation3s.Social_Media as Social_Media3',
+            'evaluation3s.Digital_Ads as Digital_Ads3', 'evaluation3s.Promotions as Promotions3'
+            
+            )
+            ->orderby('Sales_Money', 'DESC') 
             ->get();
-        $arr = array();
+
+
+            $arr = array();
+            $count = 0;
+            $assign_sales = 10;
+
+
         foreach ($stallData as $row){
-            $points1 = ($row['EvalTeam1.HRM']*0.10) + ($row['EvalTeam1.Innovation']*0.15)+
-            ($row['EvalTeam1.Sustainibility']*0.15) + ($row['EvalTeam1.Clean']*0.05) +($row['EvalTeam1.Doc']*0.05) +
-            ($row['EvalTeam1.Decor']*0.10) + ($row['EvalTeam1.Sponsorship']*0.05) + ($row['EvalTeam1.Social_Media']*0.05) 
-            + ($row['EvalTeam1.Digital_Ads']*0.05) + ($row['EvalTeam1.Promotions']*0.05) + ($row['EvalTeam1.Sales']*0.20);  
+            $count += 1;
+        
+            //check variable to keep track of whether 2nd and 3rd evaluation has been done or not
+            $num = 1;
+
+            //stall data from 1st evaluation team
+            $points1 = ($row->HRM*0.10) + ($row->Innovation*0.15)+
+            ($row->Sustainibility*0.15) + ($row->Clean*0.05) +($row->Doc*0.05) +
+            ($row->Decor*0.10) + ($row->Sponsorship*0.05) + ($row->Social_Media*0.05) 
+            + ($row->Digital_Ads*0.05) + ($row->Promotions*0.05) ;  
+
+            //stall data from 2nd evaluation team
+            if($row->HRM2 != 0 && $row->Innovation2 != 0  && $row->Sustainibility2 != 0 && 
+            $row->Clean2!= 0 && $row->Doc2 != 0 && $row-> Decor2 != 0 && $row->Sponsorship2 != 0 && 
+            $row->Social_Media2!= 0 && $row->Digital_Ads2!= 0 &&  $row->Promotions2 != 0){
+
+                $points2 = ($row->HRM2 *0.10) + ($row->Innovation2*0.15)+
+                ($row-> Sustainibility2*0.15) + ($row->Clean2*0.05) +($row->Doc2*0.05) +
+                ($row-> Decor2*0.10) + ($row->Sponsorship2*0.05) + ($row->Social_Media2*0.05) 
+                + ($row-> Digital_Ads2*0.05) + ($row->Promotions2*0.05);  
+
+                //2nd evaluation done
+                $num += 1;
+            }
+
+            else{
+                $points2 = 0;
+            }
+            
+            //stall data from 3rd evaluation team
+            if($row->HRM3 != 0 && $row->Innovation3 != 0  && $row->Sustainibility3 != 0 && 
+            $row->Clean3!= 0 && $row->Doc3 != 0 && $row-> Decor3 != 0 && $row->Sponsorship3 != 0 && 
+            $row->Social_Media3!= 0 && $row->Digital_Ads3!= 0 &&  $row->Promotions3 != 0){
 
 
-            $points2 = ($row['EvalTeam2.HRM']*0.10) + ($row['EvalTeam2.Innovation']*0.15)+
-            ($row['EvalTeam2.Sustainibility']*0.15) + ($row['EvalTeam2.Clean']*0.05) +($row['EvalTeam2.Doc']*0.05) +
-            ($row['EvalTeam2.Decor']*0.10) + ($row['EvalTeam2.Sponsorship']*0.05) + ($row['EvalTeam2.Social_Media']*0.05) 
-            + ($row['EvalTeam2.Digital_Ads']*0.05) + ($row['EvalTeam2.Promotions']*0.05) + ($row['EvalTeam2.Sales']*0.20);  
+                $points3 = ($row->HRM3*0.10) + ($row->Innovation3*0.15)+
+                ($row->Sustainibility3*0.15) + ($row->Clean3*0.05) +($row->Doc3*0.05) +
+                ($row->Decor3*0.10) + ($row->  Sponsorship3*0.05) + ($row->Social_Media3*0.05) 
+                + ($row->Digital_Ads3*0.05) + ($row->Promotions3*0.05);  
 
-            $points3 = ($row['EvalTeam3.HRM']*0.10) + ($row['EvalTeam3.Innovation']*0.15)+
-            ($row['EvalTeam3.Sustainibility']*0.15) + ($row['EvalTeam3.Clean']*0.05) +($row['EvalTeam3.Doc']*0.05) +
-            ($row['EvalTeam3.Decor']*0.10) + ($row['EvalTeam1.Sponsorship']*0.05) + ($row['EvalTeam3.Social_Media']*0.05) 
-            + ($row['EvalTeam3.Digital_Ads']*0.05) + ($row['EvalTeam3.Promotions']*0.05) + ($row['EvalTeam3.Sales']*0.20);  
+                //3rd evaluation done
+                $num +=1;
 
-            $points1 = ($points1 / 6.0) * 100;
-            $points2 = ($points2 / 6.0) * 100;
-            $points3 = ($points3 / 6.0) * 100;
+            }
 
-            $points = number_format((($points1 + $points2 +$points3) / 3.0), 2, '.', '');
+            else{
+                $points3 = 0;
+            }
 
+            //calculate total points by adding result the data from evaluation 1 with sale points
+            $points1 = (($points1 +  $assign_sales*0.2)/ 6.0) * 100;
+            //calculate total points by adding result the data from evaluation 2 with sale points
+            $points2 = (($points2 +  $assign_sales*0.2)/ 6.0) * 100;
+            //calculate total points by adding result the data from evaluation 3 with sale points
+            $points3 = (($points3 +  $assign_sales*0.2)/ 6.0) * 100;
+            
+            //if only one evaluation team has entered data then only include data of 1st evaluation
+            if($num==1){
+                $points = number_format($points1, 2, '.', '');
+            }
 
-            $bname =  $row['EvalTeam1.business_Name'];
-            $arr[] = ["Bname" => $bname, "Points" => $points];
+            //if two evaluation team has entered data then include data of 1st and 2nd evaluation
+
+            if($num==2){
+                $points = number_format((($points1 + $points2) / 2.0), 2, '.', '');
+            }
+
+            //if three evaluation team has entered data then include data of 1st, 2nd and 3rd evaluation
+            if($num==3){
+                $points = number_format((($points1 + $points2 +$points3) / 3.0), 2, '.', '');
+            }
+
+            
+            $bname =  $row->business_Name;
+
+            //put the data including stallname and its total points into array
+            array_push($arr,["Bname" => $bname, "Points" => $points]);
+
+            //assign sale points to every 6 stalls starting from 10 to 1
+            if($count == 6){
+                $assign_sales -= 1;
+                $count = 0;
+            }
+   
         }
 
         // sort the array based on points in descending order
         $columns = array_column($arr, 'Points');
         array_multisort($columns, SORT_DESC, $arr);
-
-        // get the top 10 businesses and their points and send it to the view
+        
+        // get the top 10 stalls and their points and send it to the view
         $top_10 = array();
         for($i=0;$i<10;$i++)
         {
-            array_push($top_10, array($arr[$i]["Bname"], $arr[$i]["Points"]));
+            array_push($top_10, ["Bname" => $arr[$i]['Bname'], "Points" => $arr[$i]['Points']]); 
         }
-        
         return view('main_board',['top_10' => $top_10]);
 
     }
+
+
 }
 
 

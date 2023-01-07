@@ -46,19 +46,22 @@
 
                 <!-- rows of stall -->
                     <?php
+                        $i=0;
+                        foreach($top_10 as $row){
 
-                        for($i=0; $i<10;$i++){
 
+                            
                             echo"<label class='lbl-blue bt-left col-md-1'>",$i+1,"</label>";
                             echo"<label class='col-md-1'></label>";
                             echo"<label class='lbl-purp col-md-6'>",
-                                 $top_10[$i][0] 
+                                 $row["Bname"] 
                              ,"</label>";
                             echo"<label class='col-md-1'></label>";
                             echo"<label class='lbl-blue bt-right col-md-1'>",
-                                 $top_10[$i][1] 
+                                 $row["Points"] 
                             ,"</label>";
                             echo"<label class='divider col-md-12'></label>";
+                            $i+=1;
                         };
                     ?>  
                 </div>
