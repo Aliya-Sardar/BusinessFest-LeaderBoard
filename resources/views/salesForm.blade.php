@@ -22,7 +22,7 @@
             <p>Money</p>
             <div class="d-flex justify-content-center">
                 <div class="form-check form-check-inline">
-                    <input type="number" class="form-control" id="money" name="money" />
+                    <input type="number" class="form-control" id="money" name="money" required/>
                 </div>
             </div>
             <br><br>

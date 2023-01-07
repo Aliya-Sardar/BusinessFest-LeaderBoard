@@ -27,7 +27,7 @@
                 <h4>HRM:</h4>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="HRM1" name="HRM" value="1" />
+                        <input type="radio" class="form-check-input" id="HRM1" name="HRM" value="1" required/>
                         <label class="form-check-label" for="HRM1">
                             1
                         </label>
@@ -63,7 +63,7 @@
                 <h4>Innovation:</h4>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Inn1" name="Inn" value="1" />
+                        <input type="radio" class="form-check-input" id="Inn1" name="Inn" value="1" required/>
                         <label class="form-check-label" for="Inn1">
                             1
                         </label>
@@ -99,7 +99,7 @@
                 <h4>Sustainibility:</h4>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Sus1" name="Sus" value="1" />
+                        <input type="radio" class="form-check-input" id="Sus1" name="Sus" value="1" required/>
                         <label class="form-check-label" for="Sus1">
                             1
                         </label>
@@ -135,7 +135,7 @@
                 <h4>Cleanliness and Hygiene:</h4>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Clean1" name="Clean" value="1" />
+                        <input type="radio" class="form-check-input" id="Clean1" name="Clean" value="1" required/>
                         <label class="form-check-label" for="Clean1">
                             1
                         </label>
@@ -171,7 +171,7 @@
                 <h4>Proper Documentation:</h4>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Doc1" name="Doc" value="1" />
+                        <input type="radio" class="form-check-input" id="Doc1" name="Doc" value="1" required/>
                         <label class="form-check-label" for="Doc1">
                             1
                         </label>
@@ -208,7 +208,7 @@
                 <h4>Stall Decor:</h4>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Decor1" name="Decor" value="1" />
+                        <input type="radio" class="form-check-input" id="Decor1" name="Decor" value="1" required/>
                         <label class="form-check-label" for="Decor1">
                             1
                         </label>
@@ -246,7 +246,7 @@
                 <p>Sponsorship</p>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="Spon1" name="Spon" value="1" />
+                        <input type="radio" class="form-check-input" id="Spon1" name="Spon" value="1" required/>
                         <label class="form-check-label" for="Spon1">
                             1
                         </label>
@@ -281,7 +281,7 @@
                 <p>Social Media</p>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="SM1" name="SM" value="1" />
+                        <input type="radio" class="form-check-input" id="SM1" name="SM" value="1" required/>
                         <label class="form-check-label" for="SM1">
                             1
                         </label>
@@ -316,7 +316,7 @@
                 <p>Digital Ads</p>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="DA1" name="DA" value="1" />
+                        <input type="radio" class="form-check-input" id="DA1" name="DA" value="1" required/>
                         <label class="form-check-label" for="DA1">
                             1
                         </label>
@@ -351,7 +351,7 @@
                 <p>Promotional Activities</p>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="PA1" name="PA" value="1" />
+                        <input type="radio" class="form-check-input" id="PA1" name="PA" value="1" required/>
                         <label class="form-check-label" for="PA1">
                             1
                         </label>

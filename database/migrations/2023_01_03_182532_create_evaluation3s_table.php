@@ -27,8 +27,6 @@ class CreateEvaluation3sTable extends Migration
             $table->tinyInteger('Social_Media')->unsigned()->default(0);                    // Social Media 5%
             $table->tinyInteger('Digital_Ads')->unsigned()->default(0);                     // Digital Ads 5%
             $table->tinyInteger('Promotions')->unsigned()->default(0);                      // Promotional Activities 5%
-                                // Sales 20%
-            $table->mediumInteger('Sales_Money')->unsigned()->default(0);                   // Money from Total Sales
             $table->timestamps();
         });
     }
