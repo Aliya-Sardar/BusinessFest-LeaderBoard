@@ -154,8 +154,10 @@ class PageController extends Controller
     }
 
 
-    //////////////////////////////// Get Data from DB for showing in Leaderboard ////////////////////////////////////
-    protected function getStallData(){
+    
+    
+     //////////////////////////////// Get Data from DB for showing in Leaderboard ////////////////////////////////////
+     protected function getStallData(){
         $stallData = DB::table('evaluation1s')
 
             ->join('evaluation2s', 'evaluation1s.business_Name', '=', 'evaluation2s.business_Name')
@@ -177,15 +179,12 @@ class PageController extends Controller
 
             $arr = array();
             $count = 0;
-            $assign_sales = 10;
+            $assign_sales = 5;
 
 
         foreach ($stallData as $row){
             $count += 1;
         
-            //check variable to keep track of whether 2nd and 3rd evaluation has been done or not
-            $num = 1;
-
             //stall data from 1st evaluation team
             $points1 = ($row->HRM*0.10) + ($row->Innovation*0.15)+
             ($row->Sustainibility*0.15) + ($row->Clean*0.05) +($row->Doc*0.05) +
@@ -193,67 +192,22 @@ class PageController extends Controller
             + ($row->Digital_Ads*0.05) + ($row->Promotions*0.05) ;  
 
             //stall data from 2nd evaluation team
-            if($row->HRM2 != 0 && $row->Innovation2 != 0  && $row->Sustainibility2 != 0 && 
-            $row->Clean2!= 0 && $row->Doc2 != 0 && $row-> Decor2 != 0 && $row->Sponsorship2 != 0 && 
-            $row->Social_Media2!= 0 && $row->Digital_Ads2!= 0 &&  $row->Promotions2 != 0){
-
-                $points2 = ($row->HRM2 *0.10) + ($row->Innovation2*0.15)+
-                ($row-> Sustainibility2*0.15) + ($row->Clean2*0.05) +($row->Doc2*0.05) +
-                ($row-> Decor2*0.10) + ($row->Sponsorship2*0.05) + ($row->Social_Media2*0.05) 
-                + ($row-> Digital_Ads2*0.05) + ($row->Promotions2*0.05);  
-
-                //2nd evaluation done
-                $num += 1;
-            }
-
-            else{
-                $points2 = 0;
-            }
-            
-            //stall data from 3rd evaluation team
-            if($row->HRM3 != 0 && $row->Innovation3 != 0  && $row->Sustainibility3 != 0 && 
-            $row->Clean3!= 0 && $row->Doc3 != 0 && $row-> Decor3 != 0 && $row->Sponsorship3 != 0 && 
-            $row->Social_Media3!= 0 && $row->Digital_Ads3!= 0 &&  $row->Promotions3 != 0){
+            $points2 = ($row->HRM2 *0.10) + ($row->Innovation2*0.15)+
+            ($row-> Sustainibility2*0.15) + ($row->Clean2*0.05) +($row->Doc2*0.05) +
+            ($row-> Decor2*0.10) + ($row->Sponsorship2*0.05) + ($row->Social_Media2*0.05) 
+            + ($row-> Digital_Ads2*0.05) + ($row->Promotions2*0.05);  
 
 
-                $points3 = ($row->HRM3*0.10) + ($row->Innovation3*0.15)+
-                ($row->Sustainibility3*0.15) + ($row->Clean3*0.05) +($row->Doc3*0.05) +
-                ($row->Decor3*0.10) + ($row->  Sponsorship3*0.05) + ($row->Social_Media3*0.05) 
-                + ($row->Digital_Ads3*0.05) + ($row->Promotions3*0.05);  
-
-                //3rd evaluation done
-                $num +=1;
-
-            }
-
-            else{
-                $points3 = 0;
-            }
 
             //calculate total points by adding result the data from evaluation 1 with sale points
             $points1 = (($points1 +  $assign_sales*0.2)/ 6.0) * 100;
             //calculate total points by adding result the data from evaluation 2 with sale points
             $points2 = (($points2 +  $assign_sales*0.2)/ 6.0) * 100;
-            //calculate total points by adding result the data from evaluation 3 with sale points
-            $points3 = (($points3 +  $assign_sales*0.2)/ 6.0) * 100;
-            
-            //if only one evaluation team has entered data then only include data of 1st evaluation
-            if($num==1){
-                $points = number_format($points1, 2, '.', '');
-            }
-
-            //if two evaluation team has entered data then include data of 1st and 2nd evaluation
-
-            if($num==2){
-                $points = number_format((($points1 + $points2) / 2.0), 2, '.', '');
-            }
-
-            //if three evaluation team has entered data then include data of 1st, 2nd and 3rd evaluation
-            if($num==3){
-                $points = number_format((($points1 + $points2 +$points3) / 3.0), 2, '.', '');
-            }
 
             
+
+            $points = number_format((($points1 + $points2) / 2.0), 2, '.', '');
+  
             $bname =  $row->business_Name;
 
             //put the data including stallname and its total points into array
@@ -261,7 +215,7 @@ class PageController extends Controller
 
             //assign sale points to every 6 stalls starting from 10 to 1
             if($count == 6){
-                $assign_sales -= 1;
+                $assign_sales -= 0.5;
                 $count = 0;
             }
    

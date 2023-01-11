@@ -33,7 +33,7 @@
             <div class="float-container">
 
                 <div id="logo" class="float-child-1 col-md-3 img-responsive">
-                    <img src="{{ asset('images/logo.png') }}" alt="Logo">
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo" >
                 </div>
 
                 <div class="float-child-2 col-md-5">
