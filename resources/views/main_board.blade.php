@@ -30,27 +30,43 @@
     <body>
     <div class="container align-items-center col-md-12 ">
         <div class="container-fluid container-1 col-md-10 ">
-            <div class="float-container">
+            <div class="float-container col-md-12">
 
-                <div id="logo" class="float-child-1 col-md-3 img-responsive">
+                <div id="logo" class="float-child-1 col-md-3 img-responsive bfest-logo">
                     <img src="{{ asset('images/logo.png') }}" alt="Logo" >
                 </div>
 
-                <div class="float-child-2 col-md-5">
+                <div class="float-child-2 col-md-5" >
                     <label class="lbl"> Leaderboard</label>
                 </div>
 
+                <div id="logo" class="float-child-3 col-md-3 img-responsive">
+                    <img src="{{ asset('images/ims.png') }}" alt="Logo" >
+                </div>
+         
+
             </div>
+
+            <div class="container-fluid col-md-12 align-items-center heading" style="margin-top: 2%">
+                <label class='col-md-2'></label>
+                <label class='rank col-md-1 '>Rank</label>
+                <label class='col-md-1'></label>
+                <label class='stall col-md-6' >Stall Name</label>
+                <label class='col-md-1'></label>
+                <label class='score col-md-1'>Score</label>
+                
+            
+            </div>
+
             <div class="container-fluid container-2 col-md-12 grid align-items-center ">
                 <div class="row">
+                                          
 
                 <!-- rows of stall -->
                     <?php
                         $i=0;
                         foreach($top_10 as $row){
-
-
-                            
+                          
                             echo"<label class='lbl-blue bt-left col-md-1'>",$i+1,"</label>";
                             echo"<label class='col-md-1'></label>";
                             echo"<label class='lbl-purp col-md-6'>",
@@ -59,14 +75,31 @@
                             echo"<label class='col-md-1'></label>";
                             echo"<label class='lbl-blue bt-right col-md-1'>",
                                  $row["Points"] 
-                            ,"</label>";
+                            ,"%</label>";
                             echo"<label class='divider col-md-12'></label>";
                             $i+=1;
                         };
                     ?>  
                 </div>
             </div>
-          
+           
+        </div>
+        <div class="col-md-12 sponsor" align="center">
+            <label class='lbl-purp col-md-3'>Our Proud Sponsors</label>
+        </div>
+        <div class="col-md-12" align="center">
+
+                <img  style="margin: 20px 20px 10px 10px;" src="{{ asset('images/logo2.png') }}" alt="Logo" >
+   
+                <img style="margin: 20px 20px 10px 10px;" src="{{ asset('images/logo4.png') }}" alt="Logo" >
+
+                <img style="margin: 20px 20px 10px 10px;" src="{{ asset('images/logo3.png') }}" alt="Logo" >      
+
+        </div>
+        <div class="footer col-md-12">
+            <div> Copyright © 2022-23 - Business Fest. </div>
+            <div>All Rights Reserved.</div>
+            <div> Developed by IT Team. </div>
         </div>
     </body>
 </html>

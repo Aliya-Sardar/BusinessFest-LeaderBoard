@@ -156,22 +156,16 @@ class PageController extends Controller
 
     
     
-     //////////////////////////////// Get Data from DB for showing in Leaderboard ////////////////////////////////////
-     protected function getStallData(){
+    //////////////////////////////// Get Data from DB for showing in Leaderboard ////////////////////////////////////
+    protected function getStallData(){
         $stallData = DB::table('evaluation1s')
 
             ->join('evaluation2s', 'evaluation1s.business_Name', '=', 'evaluation2s.business_Name')
-            ->join('evaluation3s', 'evaluation1s.business_Name', '=', 'evaluation3s.business_Name')
 
             ->select('evaluation1s.*',
             'evaluation2s.HRM as HRM2', 'evaluation2s.Innovation as Innovation2', 'evaluation2s.Sustainibility as Sustainibility2', 'evaluation2s.Clean as Clean2',
             'evaluation2s.Doc as Doc2', 'evaluation2s.Decor as Decor2', 'evaluation2s.Sponsorship as Sponsorship2', 'evaluation2s.Social_Media as Social_Media2',
-            'evaluation2s.Digital_Ads as Digital_Ads2', 'evaluation2s.Promotions as Promotions2',
-
-            'evaluation3s.HRM as HRM3', 'evaluation3s.Innovation as Innovation3', 'evaluation3s.Sustainibility as Sustainibility3', 'evaluation3s.Clean as Clean3',
-            'evaluation3s.Doc as Doc3', 'evaluation3s.Decor as Decor3', 'evaluation3s.Sponsorship as Sponsorship3', 'evaluation3s.Social_Media as Social_Media3',
-            'evaluation3s.Digital_Ads as Digital_Ads3', 'evaluation3s.Promotions as Promotions3'
-            
+            'evaluation2s.Digital_Ads as Digital_Ads2', 'evaluation2s.Promotions as Promotions2'            
             )
             ->orderby('Sales_Money', 'DESC') 
             ->get();
@@ -180,7 +174,7 @@ class PageController extends Controller
             $arr = array();
             $count = 0;
             $assign_sales = 5;
-
+        
 
         foreach ($stallData as $row){
             $count += 1;
@@ -197,12 +191,18 @@ class PageController extends Controller
             ($row-> Decor2*0.10) + ($row->Sponsorship2*0.05) + ($row->Social_Media2*0.05) 
             + ($row-> Digital_Ads2*0.05) + ($row->Promotions2*0.05);  
 
-
-
+            //if sales is zero then dont assign any points
+            if($row->Sales_Money == 0){
+                $sales = 0;
+            }
+            else{
+                $sales = $assign_sales;
+                
+            }
             //calculate total points by adding result the data from evaluation 1 with sale points
-            $points1 = (($points1 +  $assign_sales*0.2)/ 6.0) * 100;
+            $points1 = (($points1 +  $sales*0.2)/ 6.0) * 100;
             //calculate total points by adding result the data from evaluation 2 with sale points
-            $points2 = (($points2 +  $assign_sales*0.2)/ 6.0) * 100;
+            $points2 = (($points2 +  $sales*0.2)/ 6.0) * 100;
 
             
 
@@ -215,10 +215,9 @@ class PageController extends Controller
 
             //assign sale points to every 6 stalls starting from 10 to 1
             if($count == 6){
-                $assign_sales -= 0.5;
+                $assign_sales -= 0.5;   
                 $count = 0;
             }
-   
         }
 
         // sort the array based on points in descending order

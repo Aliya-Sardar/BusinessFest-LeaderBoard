@@ -24,8 +24,14 @@
                 <br><br>
 
                 <!------------------ HRM 10% ------------------>
-                <h4>HRM:</h4>
+                <h4>Team Management:</h4>
                 <div class="d-flex justify-content-center">
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="HRM0" name="HRM" value="0" required/>
+                        <label class="form-check-label" for="HRM0">
+                            0
+                        </label>
+                    </div>
                     <div class="form-check form-check-inline">
                         <input type="radio" class="form-check-input" id="HRM1" name="HRM" value="1" required/>
                         <label class="form-check-label" for="HRM1">
@@ -63,6 +69,12 @@
                 <h4>Innovation:</h4>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="Inn0" name="Inn" value="0" required/>
+                        <label class="form-check-label" for="Inn0">
+                            0
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
                         <input type="radio" class="form-check-input" id="Inn1" name="Inn" value="1" required/>
                         <label class="form-check-label" for="Inn1">
                             1
@@ -98,6 +110,12 @@
                 <!------------------ Sustainibility 15% ------------------>
                 <h4>Sustainibility:</h4>
                 <div class="d-flex justify-content-center">
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="Sus0" name="Sus" value="0" required/>
+                        <label class="form-check-label" for="Sus0">
+                            0
+                        </label>
+                    </div>
                     <div class="form-check form-check-inline">
                         <input type="radio" class="form-check-input" id="Sus1" name="Sus" value="1" required/>
                         <label class="form-check-label" for="Sus1">
@@ -135,6 +153,12 @@
                 <h4>Cleanliness and Hygiene:</h4>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="Clean0" name="Clean" value="0" required/>
+                        <label class="form-check-label" for="Clean0">
+                            0
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
                         <input type="radio" class="form-check-input" id="Clean1" name="Clean" value="1" required/>
                         <label class="form-check-label" for="Clean1">
                             1
@@ -170,6 +194,12 @@
                 <!------------------ Proper Documentation 5% ------------------>
                 <h4>Proper Documentation:</h4>
                 <div class="d-flex justify-content-center">
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="Doc0" name="Doc" value="0" required/>
+                        <label class="form-check-label" for="Doc0">
+                            0
+                        </label>
+                    </div>
                     <div class="form-check form-check-inline">
                         <input type="radio" class="form-check-input" id="Doc1" name="Doc" value="1" required/>
                         <label class="form-check-label" for="Doc1">
@@ -207,6 +237,12 @@
                 <!------------------ Stall Decor 5% ------------------>
                 <h4>Stall Decor:</h4>
                 <div class="d-flex justify-content-center">
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="Decor0" name="Decor" value="0" required/>
+                        <label class="form-check-label" for="Decor0">
+                            0
+                        </label>
+                    </div>
                     <div class="form-check form-check-inline">
                         <input type="radio" class="form-check-input" id="Decor1" name="Decor" value="1" required/>
                         <label class="form-check-label" for="Decor1">
@@ -246,6 +282,12 @@
                 <p>Sponsorship</p>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="Spon0" name="Spon" value="0" required/>
+                        <label class="form-check-label" for="Spon0">
+                            0
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
                         <input type="radio" class="form-check-input" id="Spon1" name="Spon" value="1" required/>
                         <label class="form-check-label" for="Spon1">
                             1
@@ -281,6 +323,12 @@
                 <p>Social Media</p>
                 <div class="d-flex justify-content-center">
                     <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="SM0" name="SM" value="0" required/>
+                        <label class="form-check-label" for="SM0">
+                            0
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
                         <input type="radio" class="form-check-input" id="SM1" name="SM" value="1" required/>
                         <label class="form-check-label" for="SM1">
                             1
@@ -315,6 +363,12 @@
                 <!------------------ Digital Ads 5% ------------------>
                 <p>Digital Ads</p>
                 <div class="d-flex justify-content-center">
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="DA0" name="DA" value="0" required/>
+                        <label class="form-check-label" for="DA0">
+                            0
+                        </label>
+                    </div>
                     <div class="form-check form-check-inline">
                         <input type="radio" class="form-check-input" id="DA1" name="DA" value="1" required/>
                         <label class="form-check-label" for="DA1">
@@ -354,6 +408,12 @@
                         <input type="radio" class="form-check-input" id="PA1" name="PA" value="1" required/>
                         <label class="form-check-label" for="PA1">
                             1
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="PA0" name="PA" value="0" required/>
+                        <label class="form-check-label" for="PA0">
+                            0
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
