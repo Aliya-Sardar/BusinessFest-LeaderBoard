@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="refresh" content="60">
+        <meta http-equiv="refresh" content="600">
         <link rel="icon" type="image/icon" sizes="32x32" href="/images/BFesticon.png">
         <title>BFest Leaderboard</title>
 
@@ -29,25 +29,32 @@
     </head>
     <body>
     <div class="container align-items-center col-md-12 ">
-        <div class="container-fluid container-1 col-md-10 ">
+
+        <div  class="container-fluid container-1 col-md-10 ">
             <div class="float-container col-md-12">
 
                 <div id="logo" class="float-child-1 col-md-3 img-responsive bfest-logo">
-                    <img src="{{ asset('images/logo.png') }}" alt="Logo" >
+                    <img style="width:270px" src="{{ asset('images/logo.png') }}" alt="Logo" >
+                    <img style="margin: 20px 20px 10px 30px;width:210px; height:75px " src="{{ asset('images/logo4.png') }}" alt="Logo" > 
                 </div>
+
 
                 <div class="float-child-2 col-md-5" >
                     <label class="lbl"> Leaderboard</label>
                 </div>
 
                 <div id="logo" class="float-child-3 col-md-3 img-responsive">
-                    <img src="{{ asset('images/ims.png') }}" alt="Logo" >
+                    <img  style="margin: 20px 20px 10px 10px;" src="{{ asset('images/logo2.png') }}" alt="Logo" >
+                    <img style="margin: 20px 20px 10px 10px;" src="{{ asset('images/logo3.png') }}" alt="Logo" >  
+                    <img style="width:210px; height:100px" src="{{ asset('images/ims.png') }}" alt="Logo" >
                 </div>
+
+                
          
 
             </div>
 
-            <div class="container-fluid col-md-12 align-items-center heading" style="margin-top: 2%">
+            <div class="container-fluid col-md-12 align-items-center heading" style="margin-top: 1%">
                 <label class='col-md-2'></label>
                 <label class='rank col-md-1 '>Rank</label>
                 <label class='col-md-1'></label>
@@ -84,22 +91,18 @@
             </div>
            
         </div>
-        <div class="col-md-12 sponsor" align="center">
-            <label class='lbl-purp col-md-3'>Our Proud Sponsors</label>
-        </div>
-        <div class="col-md-12" align="center">
 
-                <img  style="margin: 20px 20px 10px 10px;" src="{{ asset('images/logo2.png') }}" alt="Logo" >
-   
-                <img style="margin: 20px 20px 10px 10px;" src="{{ asset('images/logo4.png') }}" alt="Logo" >
 
-                <img style="margin: 20px 20px 10px 10px;" src="{{ asset('images/logo3.png') }}" alt="Logo" >      
-
-        </div>
         <div class="footer col-md-12">
-            <div> Copyright © 2022-23 - Business Fest. </div>
-            <div>All Rights Reserved.</div>
-            <div> Developed by IT Team. </div>
+            <div><b> Copyright © 2022-23 - Business Fest.</b> </div>
+            <div><b>All Rights Reserved.</b></div>
+            
+            <div> <b>Designed By : Muhammad Shaheer </b></div>
+            <div> <b>Coded By : Aliya Sardar & Adeeba </b></div>
+            <div> <b>Security System By : Ahmad Sayyab & Imran Ahmad</b> </div>
+            
+     
         </div>
+
     </body>
 </html>
